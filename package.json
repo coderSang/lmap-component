@@ -1,0 +1,22 @@
+{
+  "name": "amap-component",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "leaflet": "^1.7.1",
+    "leaflet.chinatmsproviders": "^3.0.4",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "postcss-loader": "^4.3.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
