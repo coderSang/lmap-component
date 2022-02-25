@@ -16,6 +16,7 @@
 <!--      <dqyt-control :options="control.options" :config="control.config"></dqyt-control>-->
       <dqyt-control-zoom :options="zoom.options"></dqyt-control-zoom>
       <dqyt-control-attribution :options="attribution.options"></dqyt-control-attribution>
+      <dqyt-control-scale :options="scale.options"></dqyt-control-scale>
       <dqyt-legend></dqyt-legend>
       <dqyt-vector :options="vector.options" :config="vector.config" :data="vector.data"></dqyt-vector>
     </dqyt-map>
@@ -35,6 +36,7 @@
   import DqytControl from "@/components/DqytControl"
   import DqytControlZoom from "@/components/DqytControlZoom"
   import DqytControlAttribution from "@/components/DqytControlAttribution"
+  import DqytControlScale from "@/components/DqytControlScale"
   import DqytLegend from "@/exterPlugin/DqytLegend"
   import DqytVector from "@/components/DqytVector"
 
@@ -51,6 +53,7 @@
       DqytTooltip,
       DqytControl,
       DqytControlAttribution,
+      DqytControlScale,
       DqytControlZoom,
       DqytLegend,
       DqytVector
@@ -160,6 +163,15 @@
         attribution: {
           options: {
             prefix: 'dqyt'
+          },
+          config: {
+          }
+        },
+        scale: {
+          options: {
+            maxWidth:200,
+            metric:true,
+            imperial:false
           },
           config: {
           }
