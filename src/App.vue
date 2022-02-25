@@ -13,7 +13,8 @@
           <p>ssss</p>
         </dqyt-tooltip>
       </dqyt-marker>
-      <dqyt-control :options="control.options" :config="control.config"></dqyt-control>
+<!--      <dqyt-control :options="control.options" :config="control.config"></dqyt-control>-->
+      <dqyt-zoom :options="zoom.options"></dqyt-zoom>
       <dqyt-legend></dqyt-legend>
       <dqyt-vector :options="vector.options" :config="vector.config" :data="vector.data"></dqyt-vector>
     </dqyt-map>
@@ -33,10 +34,12 @@
   import DqytControl from "@/components/DqytControl"
   import DqytLegend from "@/exterPlugin/DqytLegend"
   import DqytVector from "@/components/DqytVector"
+  import DqytZoom from "@/components/DqytZoom";
 
   export default {
     name: 'App',
     components: {
+      DqytZoom,
       DqytMap,
       DqytTileLayer,
       "dqyt-wms-tile-layer": DqytWMSTileLayer,
@@ -142,6 +145,13 @@
           },
           config: {
 
+          }
+        },
+        zoom: {
+          options: {
+            zoomInText: 'add'
+          },
+          config: {
           }
         },
         popup: {
