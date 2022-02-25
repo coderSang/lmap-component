@@ -8,7 +8,7 @@
   import { findMapObjEL } from "../util/index"
 
   export default {
-    name: "DqytAttribution",
+    name: "DqytControlAttribution",
     props: {
       options: {
         type: Object,

@@ -8,7 +8,7 @@
   import { findMapObjEL } from "../util/index"
 
   export default {
-    name: "DqytZoom",
+    name: "DqytControlZoom",
     props: {
       options: {
         type: Object,

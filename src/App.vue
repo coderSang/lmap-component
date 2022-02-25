@@ -14,8 +14,8 @@
         </dqyt-tooltip>
       </dqyt-marker>
 <!--      <dqyt-control :options="control.options" :config="control.config"></dqyt-control>-->
-      <dqyt-zoom :options="zoom.options"></dqyt-zoom>
-      <dqyt-attribution :options="attribution.options"></dqyt-attribution>
+      <dqyt-control-zoom :options="zoom.options"></dqyt-control-zoom>
+      <dqyt-control-attribution :options="attribution.options"></dqyt-control-attribution>
       <dqyt-legend></dqyt-legend>
       <dqyt-vector :options="vector.options" :config="vector.config" :data="vector.data"></dqyt-vector>
     </dqyt-map>
@@ -33,8 +33,8 @@
   import DqytPopup from "@/components/DqytPopup"
   import DqytTooltip from "@/components/DqytTooltip"
   import DqytControl from "@/components/DqytControl"
-  import DqytZoom from "@/components/DqytZoom"
-  import DqytAttribution from "@/components/DqytAttribution"
+  import DqytControlZoom from "@/components/DqytControlZoom"
+  import DqytControlAttribution from "@/components/DqytControlAttribution"
   import DqytLegend from "@/exterPlugin/DqytLegend"
   import DqytVector from "@/components/DqytVector"
 
@@ -50,8 +50,8 @@
       DqytPopup,
       DqytTooltip,
       DqytControl,
-      DqytAttribution,
-      DqytZoom,
+      DqytControlAttribution,
+      DqytControlZoom,
       DqytLegend,
       DqytVector
     },

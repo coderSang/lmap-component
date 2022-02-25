@@ -37,9 +37,10 @@
             L.control[key](this.options[key]).addTo(mapNode.mapObj)
           }
         }
-        this.$nextTick(() => {
-          this.$emit('ready', mapNode.mapObj);
-        });
+        // 无发射事件
+        // this.$nextTick(() => {
+        //   this.$emit('ready', mapNode.mapObj);
+        // });
       }
     }
   }
