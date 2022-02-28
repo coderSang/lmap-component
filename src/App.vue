@@ -2,25 +2,24 @@
   <div id="app">
     <dqyt-map :config="map.config" :options="map.options">
       <dqyt-tile-layer :url="tileLayer.url" :options="tileLayer.options"></dqyt-tile-layer>
-      <dqyt-wms-tile-layer :url="WMSTileLayer.url" :options="WMSTileLayer.options"></dqyt-wms-tile-layer>
-      <dqyt-image-overlay :url="imageOverlay.url" :options="imageOverlay.options"></dqyt-image-overlay>
-      <dqyt-video-overlay :url="videoOverlay.url" :options="videoOverlay.options"></dqyt-video-overlay>
-      <dqyt-marker :data="marker.data" :options="marker.options" :config="marker.config">
-        <dqyt-popup>
-          <p>ssss</p>
-        </dqyt-popup>
-        <dqyt-tooltip>
-          <p>ssss</p>
-        </dqyt-tooltip>
-      </dqyt-marker>
-<!--      <dqyt-control :options="control.options" :config="control.config"></dqyt-control>-->
-      <dqyt-control-zoom :options="zoom.options"></dqyt-control-zoom>
-      <dqyt-control-attribution :options="attribution.options"></dqyt-control-attribution>
-      <dqyt-control-scale :options="scale.options"></dqyt-control-scale>
-      <dqyt-legend></dqyt-legend>
-      <dqyt-vector :options="vector.options" :config="vector.config" :data="vector.data"></dqyt-vector>
+<!--      <dqyt-wms-tile-layer :url="WMSTileLayer.url" :options="WMSTileLayer.options"></dqyt-wms-tile-layer>-->
+<!--      <dqyt-image-overlay :url="imageOverlay.url" :options="imageOverlay.options"></dqyt-image-overlay>-->
+<!--      <dqyt-video-overlay :url="videoOverlay.url" :options="videoOverlay.options"></dqyt-video-overlay>-->
+<!--      <dqyt-marker :data="marker.data" :options="marker.options" :config="marker.config">-->
+<!--        <dqyt-popup>-->
+<!--          <p>ssss</p>-->
+<!--        </dqyt-popup>-->
+<!--        <dqyt-tooltip>-->
+<!--          <p>ssss</p>-->
+<!--        </dqyt-tooltip>-->
+<!--      </dqyt-marker>-->
+<!--      <dqyt-control-zoom :options="zoom.options"></dqyt-control-zoom>-->
+<!--      <dqyt-control-attribution :options="attribution.options"></dqyt-control-attribution>-->
+<!--      <dqyt-control-scale :options="scale.options"></dqyt-control-scale>-->
+<!--      <dqyt-legend :options="legend.options"></dqyt-legend>-->
+<!--      <dqyt-vector :options="vector.options" :config="vector.config" :data="vector.data"></dqyt-vector>-->
+      <dqyt-control-draw :options="draw.options" :config="draw.config"></dqyt-control-draw>
     </dqyt-map>
-    <img src="/src/assets/logo.png" style="width: 200px;height: 200px" alt="">
   </div>
 </template>
 
@@ -39,6 +38,7 @@
   import DqytControlScale from "@/components/DqytControlScale"
   import DqytLegend from "@/exterPlugin/DqytLegend"
   import DqytVector from "@/components/DqytVector"
+  import DqytControlDraw from "@/components/DqytControlDraw"
 
   export default {
     name: 'App',
@@ -56,7 +56,8 @@
       DqytControlScale,
       DqytControlZoom,
       DqytLegend,
-      DqytVector
+      DqytVector,
+      DqytControlDraw
     },
     data() {
       return {
@@ -176,6 +177,43 @@
           config: {
           }
         },
+        legend: {
+          options:{
+            // position: "topright",
+            selfDefinePosition: {
+              left: '10vw',
+              top: '10vw'
+            },
+            collapsed: false,
+            // vw, vh级别
+            symbolWidth: 2,
+            symbolHeight: 3,
+            opacity: 1,
+            column: 2,
+            legends: [{
+              label: "Marker1",
+              type: "image",
+              url: require("@/assets/logo.png"),
+              inactive: false,
+              on: {
+                'click':function(e, a){
+                  console.log(e, a)
+                }
+              },
+              layers: ['']
+            },{
+              label: "Marker1",
+              type: "image",
+              url: require("@/assets/logo.png"),
+              inactive: true,
+            },{
+              label: "Marker1",
+              type: "image",
+              url: require("@/assets/logo.png"),
+              inactive: true,
+            }]
+          }
+        },
         popup: {
           data: [30.51, 119.98],
           config: {
@@ -204,6 +242,36 @@
             }
           }
         },
+        draw: {
+          options: {
+            position: 'topright',
+            draw: {
+              polyline: {
+                shapeOptions: {
+                  color: '#f357a1',
+                  weight: 10
+                }
+              },
+              polygon: {
+                allowIntersection: false, // Restricts shapes to simple polygons
+                shapeOptions: {
+                  color: '#bada55'
+                }
+              },
+              circle: false, // Turns off this drawing tool
+              rectangle: {
+                shapeOptions: {
+                  clickable: false
+                }
+              },
+            },
+          },
+          config: {
+            'created': function (layer) {
+              console.log(layer)
+            }
+          }
+        }
       }
     },
     methods: {
