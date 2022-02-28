@@ -9,6 +9,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
+    "leaflet-boundary-canvas": "^1.0.0",
     "leaflet-draw": "^1.0.4",
     "leaflet.chinatmsproviders": "^3.0.4",
     "vue": "^2.6.11"

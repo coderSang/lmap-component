@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <dqyt-map :config="map.config" :options="map.options">
-      <dqyt-tile-layer :url="tileLayer.url" :options="tileLayer.options"></dqyt-tile-layer>
+<!--      <dqyt-tile-layer :url="tileLayer.url" :options="tileLayer.options"></dqyt-tile-layer>-->
+      <dqyt-boundary-tile-layer :url="tileBoundaryLayer.url" :options="tileBoundaryLayer.options"></dqyt-boundary-tile-layer>
 <!--      <dqyt-wms-tile-layer :url="WMSTileLayer.url" :options="WMSTileLayer.options"></dqyt-wms-tile-layer>-->
 <!--      <dqyt-image-overlay :url="imageOverlay.url" :options="imageOverlay.options"></dqyt-image-overlay>-->
 <!--      <dqyt-video-overlay :url="videoOverlay.url" :options="videoOverlay.options"></dqyt-video-overlay>-->
@@ -39,10 +40,12 @@
   import DqytLegend from "@/exterPlugin/DqytLegend"
   import DqytVector from "@/components/DqytVector"
   import DqytControlDraw from "@/components/DqytControlDraw"
+  import DqytBoundaryTileLayer from "@/components/DqytBoundaryTileLayer";
 
   export default {
     name: 'App',
     components: {
+      DqytBoundaryTileLayer,
       DqytMap,
       DqytTileLayer,
       "dqyt-wms-tile-layer": DqytWMSTileLayer,
@@ -79,6 +82,25 @@
           options: {
             foo: 'bar',
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }
+        },
+        tileBoundaryLayer: {
+          url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+          options: {
+            boundary: {
+              "type":"MultiPolygon","coordinates":[
+                [
+                  [[119,30], [123,31],
+                    [124,31], [119,31],
+                    [119,30],
+                  ]],
+                [
+                  [[119.1,30.1], [120,30.5],
+                    [121,30.5], [119.1,30.1],
+                  ],
+                ]
+              ]
+            }
           }
         },
         WMSTileLayer: {
