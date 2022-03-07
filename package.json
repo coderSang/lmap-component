@@ -1,11 +1,13 @@
 {
-  "name": "amap-component",
-  "version": "0.1.0",
-  "private": true,
+  "name": "dqyt-map-component",
+  "version": "0.1.4",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name dqyt-map-components ./src/index.js"
   },
+  "main": "./dist/dqyt-map-components.umd.min.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
@@ -22,5 +24,21 @@
     "postcss-loader": "^4.3.0",
     "postcss-px-to-viewport": "^1.1.1",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "description": "## Project setup ``` npm install ```",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderSang/lmap-component.git"
+  },
+  "keywords": [
+    "leaflet",
+    "dqyt",
+    "components"
+  ],
+  "author": "z",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coderSang/lmap-component/issues"
+  },
+  "homepage": "https://github.com/coderSang/lmap-component#readme"
 }

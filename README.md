@@ -1,4 +1,4 @@
-# amap-component
+# dqyt-map-component
 
 ## Project setup
 ```
