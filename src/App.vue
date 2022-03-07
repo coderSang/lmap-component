@@ -14,6 +14,7 @@
 <!--          <p>ssss</p>-->
 <!--        </dqyt-tooltip>-->
 <!--      </dqyt-marker>-->
+      <dqyt-marker-cluster :data="markerCluster.data" :config="markerCluster.config"></dqyt-marker-cluster>
 <!--      <dqyt-control-zoom :options="zoom.options"></dqyt-control-zoom>-->
 <!--      <dqyt-control-attribution :options="attribution.options"></dqyt-control-attribution>-->
 <!--      <dqyt-control-scale :options="scale.options"></dqyt-control-scale>-->
@@ -32,6 +33,7 @@
   import DqytImageOverlay from "@/components/DqytImageOverlay"
   import DqytVideoOverlay from "@/components/DqytVideoOverlay"
   import DqytMarker from "@/components/DqytMarker"
+  import DqytMarkerCluster from '@/components/DqytMarkerCluster'
   import DqytPopup from "@/components/DqytPopup"
   import DqytTooltip from "@/components/DqytTooltip"
   import DqytControl from "@/components/DqytControl"
@@ -54,6 +56,7 @@
       DqytImageOverlay,
       DqytVideoOverlay,
       DqytMarker,
+      DqytMarkerCluster,
       DqytPopup,
       DqytTooltip,
       DqytControl,
@@ -164,6 +167,15 @@
               iconAnchor: [22, 38],
             }
           }
+        },
+        markerCluster: {
+          // data: [[30.52, 119.97],[30.52, 119.98]],
+          data: [{lat: '30.52', lng: '119.97'}, {lat: '30.52', lng: '119.98'}],
+          config: {
+            'click': function (event) {
+              console.log(event)
+            }
+          },
         },
         control: {
           options: {
