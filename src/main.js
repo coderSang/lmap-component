@@ -4,10 +4,12 @@ import * as L from 'leaflet'
 import 'leaflet.chinatmsproviders'
 import 'leaflet-draw'
 import 'leaflet-boundary-canvas'
+import 'leaflet-side-by-side'
 
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-draw/dist/leaflet.draw.css'
 import './style/common.css'
+
 
 Vue.config.productionTip = false
 

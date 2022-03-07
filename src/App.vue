@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <dqyt-map :config="map.config" :options="map.options">
-<!--      <dqyt-tile-layer :url="tileLayer.url" :options="tileLayer.options"></dqyt-tile-layer>-->
-      <dqyt-boundary-tile-layer :url="tileBoundaryLayer.url" :options="tileBoundaryLayer.options"></dqyt-boundary-tile-layer>
+      <dqyt-tile-layer :url="tileLayer.url" :options="tileLayer.options"></dqyt-tile-layer>
+<!--      <dqyt-boundary-tile-layer :url="tileBoundaryLayer.url" :options="tileBoundaryLayer.options"></dqyt-boundary-tile-layer>-->
 <!--      <dqyt-wms-tile-layer :url="WMSTileLayer.url" :options="WMSTileLayer.options"></dqyt-wms-tile-layer>-->
 <!--      <dqyt-image-overlay :url="imageOverlay.url" :options="imageOverlay.options"></dqyt-image-overlay>-->
 <!--      <dqyt-video-overlay :url="videoOverlay.url" :options="videoOverlay.options"></dqyt-video-overlay>-->
@@ -19,7 +19,8 @@
 <!--      <dqyt-control-scale :options="scale.options"></dqyt-control-scale>-->
 <!--      <dqyt-legend :options="legend.options"></dqyt-legend>-->
 <!--      <dqyt-vector :options="vector.options" :config="vector.config" :data="vector.data"></dqyt-vector>-->
-      <dqyt-control-draw :options="draw.options" :config="draw.config"></dqyt-control-draw>
+<!--      <dqyt-control-draw :options="draw.options" :config="draw.config"></dqyt-control-draw>-->
+<!--      <dqyt-control-side-by-side :urls="sideBySide.urls" :options="sideBySide.options"></dqyt-control-side-by-side>-->
     </dqyt-map>
   </div>
 </template>
@@ -37,6 +38,7 @@
   import DqytControlZoom from "@/components/DqytControlZoom"
   import DqytControlAttribution from "@/components/DqytControlAttribution"
   import DqytControlScale from "@/components/DqytControlScale"
+  import DqytControlSideBySide from "@/components/DqytControlSideBySide"
   import DqytLegend from "@/exterPlugin/DqytLegend"
   import DqytVector from "@/components/DqytVector"
   import DqytControlDraw from "@/components/DqytControlDraw"
@@ -60,7 +62,8 @@
       DqytControlZoom,
       DqytLegend,
       DqytVector,
-      DqytControlDraw
+      DqytControlDraw,
+      DqytControlSideBySide
     },
     data() {
       return {
@@ -294,6 +297,20 @@
               console.log(layer)
             }
           }
+        },
+        sideBySide: {
+          urls: {
+            url1: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+            url2: 'https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png',
+          },
+          options: {
+            options1: {},
+            options2:{},
+          },
+          configs: {
+            config1: {},
+            config2:{},
+          },
         }
       }
     },
