@@ -2,6 +2,8 @@
   <div id="app">
     <dqyt-map :config="map.config" :options="map.options">
       <dqyt-tile-layer :url="tileLayer.url" :options="tileLayer.options"></dqyt-tile-layer>
+      <dqyt-control-mini-map></dqyt-control-mini-map>
+      <dqyt-heat></dqyt-heat>
 <!--      <dqyt-boundary-tile-layer :url="tileBoundaryLayer.url" :options="tileBoundaryLayer.options"></dqyt-boundary-tile-layer>-->
 <!--      <dqyt-wms-tile-layer :url="WMSTileLayer.url" :options="WMSTileLayer.options"></dqyt-wms-tile-layer>-->
 <!--      <dqyt-image-overlay :url="imageOverlay.url" :options="imageOverlay.options"></dqyt-image-overlay>-->
@@ -14,7 +16,7 @@
 <!--          <p>ssss</p>-->
 <!--        </dqyt-tooltip>-->
 <!--      </dqyt-marker>-->
-      <dqyt-marker-cluster :data="markerCluster.data" :config="markerCluster.config"></dqyt-marker-cluster>
+<!--      <dqyt-marker-cluster :data="markerCluster.data" :config="markerCluster.config"></dqyt-marker-cluster>-->
 <!--      <dqyt-control-zoom :options="zoom.options"></dqyt-control-zoom>-->
 <!--      <dqyt-control-attribution :options="attribution.options"></dqyt-control-attribution>-->
 <!--      <dqyt-control-scale :options="scale.options"></dqyt-control-scale>-->
@@ -27,46 +29,11 @@
 </template>
 
 <script>
-  import DqytMap from "@/components/DqytMap"
-  import DqytTileLayer from "@/components/DqytTileLayer"
-  import DqytWMSTileLayer from "@/components/DqytWMSTileLayer"
-  import DqytImageOverlay from "@/components/DqytImageOverlay"
-  import DqytVideoOverlay from "@/components/DqytVideoOverlay"
-  import DqytMarker from "@/components/DqytMarker"
-  import DqytMarkerCluster from '@/components/DqytMarkerCluster'
-  import DqytPopup from "@/components/DqytPopup"
-  import DqytTooltip from "@/components/DqytTooltip"
-  import DqytControl from "@/components/DqytControl"
-  import DqytControlZoom from "@/components/DqytControlZoom"
-  import DqytControlAttribution from "@/components/DqytControlAttribution"
-  import DqytControlScale from "@/components/DqytControlScale"
-  import DqytControlSideBySide from "@/components/DqytControlSideBySide"
-  import DqytLegend from "@/exterPlugin/DqytLegend"
-  import DqytVector from "@/components/DqytVector"
-  import DqytControlDraw from "@/components/DqytControlDraw"
-  import DqytBoundaryTileLayer from "@/components/DqytBoundaryTileLayer";
 
   export default {
     name: 'App',
     components: {
-      DqytBoundaryTileLayer,
-      DqytMap,
-      DqytTileLayer,
-      "dqyt-wms-tile-layer": DqytWMSTileLayer,
-      DqytImageOverlay,
-      DqytVideoOverlay,
-      DqytMarker,
-      DqytMarkerCluster,
-      DqytPopup,
-      DqytTooltip,
-      DqytControl,
-      DqytControlAttribution,
-      DqytControlScale,
-      DqytControlZoom,
-      DqytLegend,
-      DqytVector,
-      DqytControlDraw,
-      DqytControlSideBySide
+
     },
     data() {
       return {

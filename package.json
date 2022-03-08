@@ -1,6 +1,6 @@
 {
   "name": "dqyt-map-component",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,9 +12,11 @@
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
     "leaflet-boundary-canvas": "^1.0.0",
+    "leaflet-control-mini-map": "^0.4.0",
     "leaflet-draw": "^1.0.4",
     "leaflet-side-by-side": "^2.1.0",
     "leaflet.chinatmsproviders": "^3.0.4",
+    "leaflet.heat": "^0.2.0",
     "leaflet.markercluster": "^1.5.3",
     "vue": "^2.6.11"
   },

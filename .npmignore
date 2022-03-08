@@ -2,3 +2,4 @@ src/
 public/
 tests/
 /webpack.config.js
+/vue.config.js
