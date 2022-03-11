@@ -41,11 +41,6 @@
           iconSize: [38, 38],
           iconAnchor: [22, 38],
         }
-        // const iconGroup = L.icon({
-        //   ...iconDefault,
-        //   ...this.options.icon,
-        //   ...this.data.icon,
-        // });
         for (let i = 0 ; i < this.data.length; i++){
           let iconGroup = null
           if (this.data[i].constructor=== Object) {

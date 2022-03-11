@@ -10,22 +10,22 @@
 <!--      <dqyt-control-mini-map></dqyt-control-mini-map>-->
 <!--      <dqyt-boundary-tile-layer :url="tileBoundaryLayer.url" :options="tileBoundaryLayer.options"></dqyt-boundary-tile-layer>-->
 <!--      <dqyt-heat-layer :data="heat.data" :options="heat.options"></dqyt-heat-layer>-->
-
-<!--      <dqyt-control-side-by-side :urls="sideBySide.urls" :options="sideBySide.options"></dqyt-control-side-by-side>-->
-<!--      <dqyt-control-draw :options="draw.options" :config="draw.config"></dqyt-control-draw>-->
-<!--      <dqyt-control-legend :options="legend.options"></dqyt-control-legend>-->
-
-<!--      <dqyt-video-overlay :url="videoOverlay.url" :options="videoOverlay.options"></dqyt-video-overlay>-->
-      <dqyt-marker :data="marker.data" :options="marker.options" :config="marker.config">
+<!--      <dqyt-marker-cluster :data="markerCluster.data" :config="markerCluster.config" :options="markerCluster.options"></dqyt-marker-cluster>-->
+<!--      <dqyt-vector-layer :data="vector.data" :options="vector.options" :config="vector.config"></dqyt-vector-layer>-->
+<!--      <dqyt-marker :data="marker.data" :options="marker.options" :config="marker.config">-->
 <!--        <dqyt-popup>-->
 <!--          <p>ssss</p>-->
 <!--        </dqyt-popup>-->
 <!--        <dqyt-tooltip>-->
 <!--          <p>ssss</p>-->
 <!--        </dqyt-tooltip>-->
-      </dqyt-marker>
-<!--      <dqyt-marker-cluster :data="markerCluster.data" :config="markerCluster.config"></dqyt-marker-cluster>-->
-<!--      <dqyt-vector :options="vector.options" :config="vector.config" :data="vector.data"></dqyt-vector>-->
+<!--      </dqyt-marker>-->
+
+<!--      <dqyt-control-side-by-side :urls="sideBySide.urls" :options="sideBySide.options"></dqyt-control-side-by-side>-->
+<!--      <dqyt-control-draw :options="draw.options" :config="draw.config"></dqyt-control-draw>-->
+<!--      <dqyt-control-legend :options="legend.options"></dqyt-control-legend>-->
+
+      <dqyt-video-overlay :url="videoOverlay.url" :options="videoOverlay.options"></dqyt-video-overlay>
     </dqyt-map>
   </div>
 </template>
@@ -100,7 +100,7 @@
           },
         },
         videoOverlay: {
-          url: 'https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218114723HDu3hhxqIT.mp4',
+          url: 'https://www.mapbox.com/bites/00188/patricia_nasa.webm',
           options: {
             videoBounds: [[30.52, 119.98], [30.55, 120]],
           },
@@ -145,7 +145,22 @@
         },
         markerCluster: {
           // data: [[30.52, 119.97],[30.52, 119.98]],
-          data: [{lat: '30.52', lng: '119.97'}, {lat: '30.52', lng: '119.98'}],
+          data: [
+            {lat: '30.52', lng: '119.97', icon: {
+              iconUrl: require("@/assets/images/markerUser.png"),
+              iconSize: [38, 38],
+              iconAnchor: [22, 38],
+            }},
+            {lat: '30.52', lng: '119.98'}
+          ],
+          options: {
+            draggable: true,
+            icon: {
+              iconUrl: require("@/assets/images/markerUser.png"),
+              iconSize: [38, 38],
+              iconAnchor: [22, 38],
+            }
+          },
           config: {
             'click': function (event) {
               console.log(event)

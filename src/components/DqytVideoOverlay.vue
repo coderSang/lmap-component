@@ -29,7 +29,11 @@
         if (this.url === '') {
           return
         }
-        this.mapObj = L.videoOverlay(this.url, this.options.videoBounds, this.options).addTo(mapNode.mapObj);
+        this.mapObj = L.videoOverlay(this.url, this.options.videoBounds, {
+          muted: true,
+            ...this.options
+          },
+          ).addTo(mapNode.mapObj);
         this.$nextTick(() => {
           this.$emit('ready', this.mapObj);
         });
