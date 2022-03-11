@@ -8,7 +8,7 @@
   import {findMapObjEL} from "@/util";
 
   export default {
-    name: "DqytLegend",
+    name: "DqytControlLegend",
     props: {
       options: {
         type: Object,

@@ -10,11 +10,17 @@
     props: {
       urls: {
         type: Object,
-        default: ()=>({})
+        default: ()=>({
+          url1: '',
+          url2: '',
+        })
       },
       options: {
         type: Object,
-        default: ()=>({})
+        default: ()=>({
+          options1: {},
+          options2:{},
+        })
       },
       configs: {
         type: Object,

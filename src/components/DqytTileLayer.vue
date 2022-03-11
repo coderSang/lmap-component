@@ -7,9 +7,10 @@
   export default {
     name: "DqytTileLayer",
     props: {
+      // 默认天地图
       url: {
         type: String,
-        default: ''
+        default: 'GaoDe.Normal.Map'
       },
       options: {
         type: Object,
@@ -41,13 +42,9 @@
     methods:{
       loadLayer(){
         const mapNode = findMapObjEL(this.$parent)
-        // 默认天地图
-        if (this.url === '') {
-          this.url = 'TianDiTu.Normal.Map'
-        }
         // 如果在列表内，则用chinaLayer方法加载
         if (this.mapInherent.includes(this.url)) {
-          let chinaLayer = L.tileLayer.chinaProvider(this.url)
+          let chinaLayer = L.tileLayer.chinaProvider(this.url, this.options)
           this.mapObj = chinaLayer.addTo(mapNode.mapObj)
         }
         else { // 自定义图层

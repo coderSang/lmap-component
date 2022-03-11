@@ -15,10 +15,6 @@
         type: Object,
         default: () => ({})
       },
-      config: {
-        type: Object,
-        default: () => ({})
-      }
     },
     mounted() {
       this.loadLayer()

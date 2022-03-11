@@ -7,7 +7,7 @@
   import { findMapObjEL } from '../util/index'
 
   export default {
-    name: "LeafletMarker",
+    name: "DqytMarker",
     props: {
       data: {
         type: [Array, Object],

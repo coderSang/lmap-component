@@ -30,16 +30,16 @@ import DqytControlAttribution from "@/components/DqytControlAttribution"
 import DqytControlScale from "@/components/DqytControlScale"
 import DqytControlSideBySide from "@/components/DqytControlSideBySide"
 import DqytControlMiniMap from "@/components/DqytControlMiniMap"
-import DqytLegend from "@/components/DqytLegend"
-import DqytVector from "@/components/DqytVector"
+import DqytControlLegend from "@/components/DqytControlLegend"
+import DqytVectorLayer from "@/components/DqytVectorLayer"
 import DqytControlDraw from "@/components/DqytControlDraw"
 import DqytBoundaryTileLayer from "@/components/DqytBoundaryTileLayer";
-import DqytHeat from "@/components/DqytHeat";
+import DqytHeatLayer from "@/components/DqytHeatLayer";
 
 const install = (Vue) => {
   Vue.component(DqytMap.name, DqytMap);
   Vue.component(DqytTileLayer.name, DqytTileLayer);
-  Vue.component(DqytWMSTileLayer.name, DqytWMSTileLayer);
+  Vue.component('dqyt-wms-tile-layer', DqytWMSTileLayer);
   Vue.component(DqytImageOverlay.name, DqytImageOverlay);
   Vue.component(DqytVideoOverlay.name, DqytVideoOverlay);
   Vue.component(DqytMarker.name, DqytMarker);
@@ -53,10 +53,10 @@ const install = (Vue) => {
   Vue.component(DqytControlMiniMap.name, DqytControlMiniMap);
   Vue.component(DqytControlScale.name, DqytControlScale);
   Vue.component(DqytControlSideBySide.name, DqytControlSideBySide);
-  Vue.component(DqytLegend.name, DqytLegend);
-  Vue.component(DqytVector.name, DqytVector);
+  Vue.component(DqytControlLegend.name, DqytControlLegend);
+  Vue.component(DqytVectorLayer.name, DqytVectorLayer);
   Vue.component(DqytBoundaryTileLayer.name, DqytBoundaryTileLayer);
-  Vue.component(DqytHeat.name, DqytHeat);
+  Vue.component(DqytHeatLayer.name, DqytHeatLayer);
 }
 // 组件有可能会通过script标签的方式引入
 // <script src="dqyt-ui">

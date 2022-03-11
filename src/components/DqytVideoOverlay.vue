@@ -5,7 +5,7 @@
 <script>
   import { findMapObjEL } from '../util/index'
   export default {
-    name: "DqytImageOverlay",
+    name: "DqytVideoOverlay",
     props: {
       url: {
         type: String,

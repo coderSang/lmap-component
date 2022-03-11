@@ -40,8 +40,6 @@
           center: [30.52, 119.98],
           zoom: 13,
           crs: L.CRS.EPSG3857,
-          minZoom: 3,
-          maxZoom: 18,
           layers: [],
         },
       }

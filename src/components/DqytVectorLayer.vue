@@ -6,7 +6,7 @@
   import {findMapObjEL} from "@/util";
 
   export default {
-    name: "DqytVector",
+    name: "DqytVectorLayer",
     props: {
       options: {
         type: Object,
